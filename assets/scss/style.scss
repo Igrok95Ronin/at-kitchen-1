@@ -1,6 +1,14 @@
 $primaryColor: #337ab7;
 $colorbutton: #ffc107;
 
+@mixin title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: clamp(25px,3vw,34px) ;
+    color: #000;
+    font-weight: 600;  
+}
+
 body{
     outline: 1px solid red;
     margin: auto;
@@ -56,7 +64,7 @@ body{
 //First section
 .first-section {
     background: url(../img/bc402f89c1017fe2a11bdcb87afc3935.jpg) no-repeat;
-
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
 }
@@ -75,9 +83,6 @@ body{
     width: 700px;
     padding: 30px 20px;
 }
-.first-section-wrapper__title {
-
-}
 .first-section-wrapper__description {
     font-size: 21px;
 }
@@ -93,8 +98,56 @@ body{
         background-color: #e5af0b;
     }
 }
+//Second section
+.second-section {
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.2;
+        background-color:$primaryColor;
+    }
+}
+.second-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.second-title {
+    @include title();
+    position: relative;
+}
+.second-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    position: relative;
+}
+.second-left {
+}
+.second-left__items {
+    font-size: 17px;
+}
+.second-left__items--fw {
+    font-weight: 600;
+}
+.second-right {
+}
+.second-right__img {
+    width: 100%;
+}
 
-
+@media (max-width: 992px) {
+    .second-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width: 768px) {
     .first-container {
         min-height: 60vh;
