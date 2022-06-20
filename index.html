@@ -24,7 +24,7 @@ $title = $text . ' ' . $city;
     
     
         <!--Шапка сайта-->
-        <header class="header">
+        <header class="header d-none d-sm-block">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 header-container">
@@ -40,20 +40,24 @@ $title = $text . ' ' . $city;
         <!-- Основное содержимое страницы -->
 
         <!-- Раздел страницы-->
-        <section>
-            <div class="container">
+        <section class="first-section">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col">...</div>                 
+                    <div class="col-12 first-container">
+                        <div class="fixed-top d-sm-none">
+                            <div class="header-button-wrapper d-grid col-12">
+                                <a class="btn header-button-link" href="#" >111222333</a>
+                            </div>
+                        </div>
+                        <div class="first-section-wrapper">
+                            <h1 class="first-section-wrapper__title">Küchen</h1>
+                            <p class="first-section-wrapper__description">Ihr Küchenexperte</p>
+                            <div class="first-section-wrapper__button mt-5"><a href="#"><img src="assets/img/arrow-down.svg" alt=""></a></div>
+                        </div>
+                    </div>                 
                 </div>            
             </div>
-            <!-- Определяет статью -->
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col">...</div>                 
-                    </div>            
-                </div>
-            </article>
+        </section>
 
         <!--Нижний колонтитул страницы-->
         <footer>

@@ -1,4 +1,5 @@
 $primaryColor: #337ab7;
+$colorbutton: #ffc107;
 
 body{
     outline: 1px solid red;
@@ -26,12 +27,8 @@ body{
     height: 54px;
     border-radius: 10px 0 10px 0;
 }
-.header-button-wrapper {
-
-
-}
 .header-button-link {
-    background-color: #ffc107;
+    background-color: $colorbutton;
     color: #fff;
     font-size: 20px;
     font-weight: 700;
@@ -54,5 +51,60 @@ body{
         color: #fff;
         background-color: #f0b606;
         transition: .5s;
+    }
+}
+//First section
+.first-section {
+    background: url(../img/bc402f89c1017fe2a11bdcb87afc3935.jpg) no-repeat;
+
+    background-size: cover;
+    background-position: center;
+}
+.first-container {
+    max-width: 1200px;
+    min-height: 80vh;
+    margin: 0 auto;
+    display: flex;
+    align-items:flex-end;
+    padding: 30px 0;
+}
+.first-section-wrapper {
+    background-color: $primaryColor;
+    color: #fff;
+    opacity: 0.7;
+    width: 700px;
+    padding: 30px 20px;
+}
+.first-section-wrapper__title {
+
+}
+.first-section-wrapper__description {
+    font-size: 21px;
+}
+.first-section-wrapper__button {
+    width: 40px;
+    height: 40px;
+    background-color: $colorbutton;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        background-color: #e5af0b;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .first-container {
+        min-height: 60vh;
+    }
+}
+@media (max-width: 576px) {
+    .header-button-link {
+        text-align: center;
+    }
+    .header-button-link::before {
+        right: 150px;
     }
 }
