@@ -7,3 +7,58 @@ body {
   min-width: 360px;
   color: #7a7a7a;
 }
+
+.header {
+  background-color: #337ab7;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 12px;
+}
+
+.header-logo {
+  width: 200px;
+  height: 54px;
+  border-radius: 10px 0 10px 0;
+}
+
+.header-button-link {
+  background-color: #ffc107;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+  min-width: 175px;
+  text-align: right;
+  letter-spacing: 2px;
+}
+.header-button-link::before {
+  content: url(../img/telephone-fill.svg);
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 140px;
+}
+.header-button-link:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #f0b606;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
