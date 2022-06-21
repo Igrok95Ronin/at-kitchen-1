@@ -8,6 +8,49 @@ $colorbutton: #ffc107;
     color: #000;
     font-weight: 600;  
 }
+@mixin  button {
+    background-color: $colorbutton;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .5s;
+    position: relative;
+    min-width: 175px;
+    text-align: right;
+    letter-spacing: 2px;
+
+    animation-name: animRotate ;
+    animation-duration: 1.5s;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+    @keyframes animRotate {
+        0%{
+            transform: rotate(-5deg);
+            transform: scale(0.98);
+        }
+        100%{
+            transform: rotate(15deg);
+            transform: scale(1);
+            background-color: #d61c1c;
+        }
+    }
+    &::before {
+        content: url(../img/telephone-fill.svg);
+        position: absolute;
+        top: 8px;
+        left: 0;
+        right: 140px;
+    }
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: #f0b606;
+        transition: .5s;
+        animation-fill-mode: forwards;
+        animation-duration: 0s;
+    }
+}
 
 body{
     outline: 1px solid red;
@@ -18,7 +61,7 @@ body{
     min-width: 360px;
     color: #7a7a7a;
 }
-//header
+//header!
 .header {
     background-color: $primaryColor;
 }
@@ -36,30 +79,7 @@ body{
     border-radius: 10px 0 10px 0;
 }
 .header-button-link {
-    background-color: $colorbutton;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: .5s;
-    position: relative;
-    min-width: 175px;
-    text-align: right;
-    letter-spacing: 2px;
-    &::before {
-        content: url(../img/telephone-fill.svg);
-        position: absolute;
-        top: 8px;
-        left: 0;
-        right: 140px;
-
-    }
-    &:hover {
-        text-decoration: none;
-        color: #fff;
-        background-color: #f0b606;
-        transition: .5s;
-    }
+    @include button();
 }
 //First section
 .first-section {
@@ -74,7 +94,7 @@ body{
     margin: 0 auto;
     display: flex;
     align-items:flex-end;
-    padding: 30px 0;
+    padding: 30px 12px;
 }
 .first-section-wrapper {
     background-color: $primaryColor;
@@ -94,8 +114,21 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    animation-name: anim ;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
     &:hover {
         background-color: #e5af0b;
+    }
+}
+@keyframes anim {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
     }
 }
 //Second section
@@ -129,19 +162,94 @@ body{
     gap: 20px;
     position: relative;
 }
-.second-left {
-}
 .second-left__items {
     font-size: 17px;
 }
 .second-left__items--fw {
     font-weight: 600;
 }
-.second-right {
-}
 .second-right__img {
     width: 100%;
+    &:hover {
+        animation-name: animRotate1 ;
+        animation-duration: 1s;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        @keyframes animRotate1 {
+            0%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(1.05);
+            }
+        }
+    }
 }
+//Third section
+.third-section {
+    background: url(../img/base_06fcc8df-f670-407c-81be-4cbdbb7d15cd.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.third-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.third-box {
+    background-color: $primaryColor;
+    color: #fff;
+    opacity: 0.7;
+    width: 700px;
+    padding: 50px 20px;
+    text-align: center;
+}
+.third-box__title {
+}
+.third-box__description {
+    font-size: 21px;
+    margin: 50px 0;
+}
+.third-box__wrapper {
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
+.header-mail-wrapper {
+}
+.third-button-link {
+    @include button();
+}
+.header-mail-link {
+    background-color: $colorbutton;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .5s;
+    position: relative;
+    min-width: 282px;
+    text-align: right;
+    letter-spacing: 2px;
+    transition: 1.0s;
+    &::before {
+        content: url(../img/envelope.svg);
+        position: absolute;
+        top: 8px;
+        left: 10px;
+    }
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: #d61c1c;
+        transition: 1.0s;
+    }
+}
+
+
 
 @media (max-width: 992px) {
     .second-wrapper {
@@ -159,5 +267,30 @@ body{
     }
     .header-button-link::before {
         right: 150px;
+    }
+    .third-box__wrapper {
+        gap: 20px;
+        flex-direction: column;
+    }
+    .third-box__description {
+        margin: 30px 0;
+    }
+    .third-box {
+        padding: 10px 5px;
+    }
+}
+
+@media (max-height:600px) {
+    .third-box__description {
+        font-size: 21px;
+        margin: 10px 0;
+    }
+    .third-box {
+        background-color: #337ab7;
+        color: #fff;
+        opacity: 0.7;
+        width: 700px;
+        padding: 20px 20px;
+        text-align: center;
     }
 }

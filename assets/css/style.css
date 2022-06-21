@@ -46,6 +46,44 @@ body {
   min-width: 175px;
   text-align: right;
   letter-spacing: 2px;
+  -webkit-animation-name: animRotate;
+          animation-name: animRotate;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+@-webkit-keyframes animRotate {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  100% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: #d61c1c;
+  }
+}
+@keyframes animRotate {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  100% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: #d61c1c;
+  }
 }
 .header-button-link::before {
   content: url(../img/telephone-fill.svg);
@@ -61,6 +99,10 @@ body {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
 }
 
 .first-section {
@@ -80,7 +122,7 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding: 30px 0;
+  padding: 30px 12px;
 }
 
 .first-section-wrapper {
@@ -109,11 +151,40 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-animation-name: anim;
+          animation-name: anim;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 .first-section-wrapper__button:hover {
   background-color: #e5af0b;
 }
 
+@-webkit-keyframes anim {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes anim {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
 .second-section {
   position: relative;
 }
@@ -165,6 +236,170 @@ body {
 .second-right__img {
   width: 100%;
 }
+.second-right__img:hover {
+  -webkit-animation-name: animRotate1;
+          animation-name: animRotate1;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes animRotate1 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+@keyframes animRotate1 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+.third-section {
+  background: url(../img/base_06fcc8df-f670-407c-81be-4cbdbb7d15cd.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.third-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 45vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.third-box {
+  background-color: #337ab7;
+  color: #fff;
+  opacity: 0.7;
+  width: 700px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.third-box__description {
+  font-size: 21px;
+  margin: 50px 0;
+}
+
+.third-box__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.third-button-link {
+  background-color: #ffc107;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+  min-width: 175px;
+  text-align: right;
+  letter-spacing: 2px;
+  -webkit-animation-name: animRotate;
+          animation-name: animRotate;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+@keyframes animRotate {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  100% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: #d61c1c;
+  }
+}
+.third-button-link::before {
+  content: url(../img/telephone-fill.svg);
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 140px;
+}
+.third-button-link:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #f0b606;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
+}
+
+.header-mail-link {
+  background-color: #ffc107;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+  min-width: 282px;
+  text-align: right;
+  letter-spacing: 2px;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+.header-mail-link::before {
+  content: url(../img/envelope.svg);
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+.header-mail-link:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #d61c1c;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
 
 @media (max-width: 992px) {
   .second-wrapper {
@@ -183,5 +418,32 @@ body {
   }
   .header-button-link::before {
     right: 150px;
+  }
+  .third-box__wrapper {
+    gap: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .third-box__description {
+    margin: 30px 0;
+  }
+  .third-box {
+    padding: 10px 5px;
+  }
+}
+@media (max-height: 600px) {
+  .third-box__description {
+    font-size: 21px;
+    margin: 10px 0;
+  }
+  .third-box {
+    background-color: #337ab7;
+    color: #fff;
+    opacity: 0.7;
+    width: 700px;
+    padding: 20px 20px;
+    text-align: center;
   }
 }
