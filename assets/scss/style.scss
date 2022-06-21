@@ -50,7 +50,6 @@ $colorbutton: #ffc107;
 }
 
 body{
-    outline: 1px solid red;
     margin: auto;
     padding: 0;
     font: 15px Helvetica,Arial,sans-serif;
@@ -233,7 +232,7 @@ body{
 .third-box {
     background-color: $primaryColor;
     color: #fff;
-    opacity: 0.7;
+    opacity: 0.9;
     width: 700px;
     padding: 50px 20px;
     text-align: center;
@@ -404,6 +403,16 @@ body{
 }
 .fifth-item__message {
     font-size: 17px;
+}
+//Footer
+.footer {
+    background-color: $primaryColor;
+    height: 5vh;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
 }
 
 

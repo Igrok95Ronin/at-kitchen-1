@@ -4,8 +4,8 @@ $site_data      = json_decode(file_get_contents('http://templates.jquery.link/ap
 $phone_name     = $site_data['phone_name'];
 $phone_href     = $site_data['phone_href'];
 
-$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Entrumpelung'));
-$city           = str_replace('+', ' ', trim($_GET['n'] ?? 'in der nahe'));
+$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Küchen'));
+$city           = str_replace('+', ' ', trim($_GET['n'] ?? ''));
 
 $title = $text . ' ' . $city;
 ?>
@@ -21,8 +21,6 @@ $title = $text . ' ' . $city;
     <title><?= $title ?></title>
 </head>
 <body>
-    
-    
         <!--Шапка сайта-->
         <header class="header d-none d-sm-block">
             <div class="container-fluid">
@@ -30,7 +28,7 @@ $title = $text . ' ' . $city;
                     <div class="col-12 header-container">
                         <img class="header-logo" src="assets/img/Logo.jpg" alt="">
                         <div class="header-button-wrapper">
-                            <a class="btn header-button-link" href="#" >111222333</a>
+                            <a class="btn header-button-link" href="<?= $phone_href ?>" ><?= $phone_name ?></a>
                         </div>
                     </div>                 
                 </div>            
@@ -43,11 +41,11 @@ $title = $text . ' ' . $city;
                     <div class="col-12 first-container">
                         <div class="fixed-top d-sm-none">
                             <div class="header-button-wrapper d-grid col-12">
-                                <a class="btn header-button-link" href="#" >111222333</a>
+                                <a class="btn header-button-link" href="<?= $phone_href ?>" ><?= $phone_name ?></a>
                             </div>
                         </div>
                         <div class="first-section-wrapper">
-                            <h1 class="first-section-wrapper__title">Küchen</h1>
+                            <h1 class="first-section-wrapper__title"><?= $title ?></h1>
                             <p class="first-section-wrapper__description">Ihr Küchenexperte</p>
                             <div class="first-section-wrapper__button mt-5"><a href="#firstTitle"><img src="assets/img/arrow-down.svg" alt=""></a></div>
                         </div>
@@ -85,7 +83,7 @@ $title = $text . ' ' . $city;
                             <p class="third-box__description">Kontaktieren Sie uns noch heute!</p>
                             <div class="third-box__wrapper">
                                 <div class="third-button-wrapper">
-                                    <a class="btn third-button-link" href="#" >111222333</a>
+                                    <a class="btn third-button-link" href="<?= $phone_href ?>" ><?= $phone_name ?></a>
                                 </div>
                                 <div class="header-mail-wrapper">
                                     <a class="btn header-mail-link" href="#qwer" > Nachricht schreiben</a>
@@ -127,10 +125,10 @@ $title = $text . ' ' . $city;
                 <div class="row">
                     <div class="col-12 fourth-container">
                         <div class="fourth-box">
-                            <h2 class="fourth-box__title">Kontaktieren Sie uns!</h2>
+                            <h2 class="fourth-box__title" id="qwer">Kontaktieren Sie uns!</h2>
                             <p class="fourth-box__description">Rufen Sie uns an oder senden Sie eine Nachricht.<br> Wir freuen uns auf Sie!</p>
                             <div class="fourth-button-wrapper mt-5">
-                                <a class="btn fourth-button-link" href="#" >111222333</a>
+                                <a class="btn fourth-button-link" href="<?= $phone_href ?>" ><?= $phone_name ?></a>
                             </div>
 
                             <form id="jq_form" class="mt-5">
@@ -155,7 +153,7 @@ $title = $text . ' ' . $city;
                                     <textarea rows="3" class="form-control" name="jq_text" placeholder="Nachricht"></textarea>
                                     <div id="jq_text" style="font-size:15px;color:red;padding-top:2px;display:none">Dies ist ein Pflichtfeld.</div>
                                 </div>
-                                <div class="wer" id="qwer"><input class="btn btn-success text-uppercase fw-bold mb-5 px-3 py-2 fourth-forms-button" type="submit" id="jq_submit" value="Senden"> </div>
+                                <div class="wer"><input class="btn btn-success text-uppercase fw-bold mb-5 px-3 py-2 fourth-forms-button" type="submit" id="jq_submit" value="Senden"> </div>
                                 <div id="jq_success" style="display:none">Vielen Dank für deine Nachricht. Sie wurde gesendet.</div>
                             </form>
                             
@@ -200,20 +198,12 @@ $title = $text . ' ' . $city;
             </div>
         </section>
         <!--Нижний колонтитул страницы-->
-        <footer>
-            <div class="container">
+        <footer class="footer">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col">...</div>                 
+                    <div class="col-12">2022</div>                 
                 </div>            
             </div>
-            <!-- Навигационные ссылки -->
-            <nav>
-                <div class="container">
-                    <div class="row">
-                        <div class="col">.d..</div>                 
-                    </div>            
-                </div>
-            </nav>
         </footer>
         <!--Style-->     
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
